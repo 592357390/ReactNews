@@ -1,6 +1,7 @@
 import React from 'react'
 import {Card} from 'antd';
-// import {Router,Route,Link,browserHistory} from 'react-router;'
+import {Link, Router} from 'react-router-dom'
+
 export default class NewsBlock extends React.Component {
     constructor() {
         super();
@@ -26,10 +27,12 @@ export default class NewsBlock extends React.Component {
     render() {
 
         const {news} = this.state;
-        const newList = news.length ?
+        const newsList = news.length ?
             news.map((newsItem, index) => (
                 <li key={index}>
-                    {/*<Link to{/de}></Link>*/}
+                    {/*<Link to={`details/${newsItem.uniquekey}`} target="_blank">*/}
+                        {newsItem.title}
+                    {/*</Link>*/}
                 </li>
             ))
             : "没有加载到任何新闻"
@@ -37,7 +40,7 @@ export default class NewsBlock extends React.Component {
             <div className="topNewsList">
                 <Card>
                     <ul>
-
+                        {newsList}
                     </ul>
 
                 </Card>

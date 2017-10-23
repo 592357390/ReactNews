@@ -6,6 +6,7 @@ import src3 from '../images/carousel_3.jpg';
 import src4 from '../images/carousel_4.jpg';
 import {Menu, Icon, Tabs, message, Form, Input, Button} from 'antd';
 import '../App.css';
+import NewsBlock from "./text_block";
 
 const TabPane = Tabs.TabPane;
 
@@ -34,7 +35,14 @@ export default class Content extends React.Component {
                                 </Carousel>
                             </div>
                         </div>
-
+                        <Tabs className="tabs_news">
+                            <TabPane tab="头条新闻" key="1">
+                                <NewsBlock count={22} type="top" width="100%" bordered="false"/>
+                            </TabPane>
+                            <TabPane tab="国际" key="2">
+                                <NewsBlock count={22} type="guoji" width="100%" bordered="false"/>
+                            </TabPane>
+                        </Tabs>
                     </Col>
                     <Col span={2}></Col>
                 </Row>
